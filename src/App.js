@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, useState } from 'react';
 import './App.css';
+import LabelledInput from './LabelledInput.js';
 
 class App extends Component {
   render() {
@@ -8,15 +8,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <form>
-            <label>
-              Name:
-              <input type="text" name="name" />
-            </label>
+            <LabelledInput labelName="Cardholder Name"/>
             <br></br>
-            <label>
-              SSN:
-              <input type="text" name="ssn" />
-            </label>
+            <LabelledInput labelName="SSN"/>
+            <br></br>
+            <LabelledInput labelName="Merchant Name"/>
           </form>
         </header>
       </div>
