@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <form>
-            <LabelledInput labelName="Cardholder Name"/>
+            <LabelledInput labelName="Cardholder Name" value="bob2"/>
             <br></br>
             <LabelledInput labelName="SSN"/>
             <br></br>

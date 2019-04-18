@@ -6,7 +6,7 @@ function LabelledInput(props) {
     return (
             <label>
                 {props.labelName}:
-                <input onChange={event => setName(event.target.value)} type="text" name="name" />
+                <input onChange={event => setName(event.target.value)} type="text" id={props.InputID}/>
             </label>
     );
 }
