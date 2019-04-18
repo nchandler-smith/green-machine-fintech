@@ -1,16 +1,11 @@
-// class UserInputValidator {
-
-//     validateSsn(inputValue) {
-//         return true;
-//     }
-// }
-
 function validateSsn(inputValue) {
-    const reg = new RegExp('[0-9]{9}');
-    const result = inputValue.search(reg);
-
-
-    return (inputValue.length === 9) && (result === 0);
+    const validSsnLength = 9;
+    if(inputValue.length > validSsnLength) {
+        return false
+    }
+    const reg = new RegExp(`[0-9]{${validSsnLength}}`);
+    const containsNineDigits = reg.test(inputValue);
+    return containsNineDigits;
 }
 
 export default validateSsn;

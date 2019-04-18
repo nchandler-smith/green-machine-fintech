@@ -7,6 +7,11 @@ describe("ssn validation", () => {
         expect(actual).toBeFalsy();
     });
 
+    it('is invalid when less than 9 digits', () => {
+        const actual = validateSsn("12345678");
+        expect(actual).toBeFalsy();
+    });
+
     it('is valid when exactly 9 digits', () => {
         const actual = validateSsn("123456789");
         expect(actual).toBeTruthy();
