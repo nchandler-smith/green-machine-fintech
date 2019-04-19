@@ -1,6 +1,5 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import LabelledInput from './LabelledInput.js';
 
 class App extends Component {
   constructor(props){
@@ -12,14 +11,10 @@ class App extends Component {
       ssn: "",
       merchantName: ""
     }
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
-    // event.preventDefault();
-    // event.target.form.reset();
-    console.log('We are here');
     this.setState({name1: null});
   }
 
@@ -28,9 +23,7 @@ class App extends Component {
   }
 
   setName = (a) => {
-    console.log('We are here');
     this.setState({name1: a})
-    console.log('====>' + a);
   }
 
   setCardHolderName = (cardholderName) => {
@@ -41,7 +34,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <form onSubmit={this.handleSubmit}> */}
           <form>
             <label>
               Cardholder Name:
