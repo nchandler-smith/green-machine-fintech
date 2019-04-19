@@ -7,7 +7,7 @@ import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("user input", () => {
-    it('should allow a user to enter their name', () => {
+    it('should clear the form with the user presses submit', () => {
         const input = mount(<App/>);
         let userInputs = input.find('input');
         const submitButton = input.find('#blah')
