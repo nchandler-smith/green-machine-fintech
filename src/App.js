@@ -32,6 +32,7 @@ class App extends Component {
             <label>
               SSN:
               <input onChange={event => this.setName(event.target.value)} type="text"/>
+            <br></br>
             </label>
             {/*<LabelledInput labelName="SSN"/>*/}
             <label>
@@ -40,7 +41,7 @@ class App extends Component {
             </label>
             <br></br>
             {/*<LabelledInput labelName="Merchant Name"/>*/}
-            <input id="blah" type="submit" value="Submit"/>
+            <button id="blah" type="submit">Submit</button>
           </form>
         </header>
       </div>
