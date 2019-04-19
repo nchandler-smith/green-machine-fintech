@@ -33,6 +33,10 @@ class App extends Component {
     this.setState({ssn: ssn});
   }
 
+  setMerchantname = (merchantName) => {
+    this.setState({merchantName: merchantName});
+  }
+
   render() {
     return (
       <div className="App">
@@ -50,7 +54,7 @@ class App extends Component {
             </label>
             <label>
               Merchant Name:
-              <input onChange={event => this.setName(event.target.value)} type="text"/>
+              <input onChange={event => this.setMerchantname(event.target.value)} type="text" id="merchantName"/>
             </label>
             <br></br>
             <button onClick={() => this.handleSubmit()} type="submit" id="blah"/>

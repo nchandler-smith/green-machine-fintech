@@ -18,12 +18,14 @@ describe("user input", () => {
         const ssn = userInputs.find('#ssn');
         ssn.simulate('change', {target: {value: '123456789'}});
         
-        //userInputs.forEach((name) => {name.simulate('change', {target: {value: 'foo'}})});
+        const merchantName = userInputs.find('#merchantName');
+        merchantName.simulate('change', {target: {value: 'Natorade'}});
+        
         const instanceData = input.instance()
 
-        // expect(instanceData.state.name1).toEqual('foo');
         expect(instanceData.state.cardHolderName).toEqual('Jonathan Dough');
         expect(instanceData.state.ssn).toEqual('123456789');
+        expect(instanceData.state.merchantName).toEqual('Natorade');
         submitButton.simulate('click');
 
         expect(instanceData.state.name1).toBeNull();
