@@ -9,16 +9,24 @@ Enzyme.configure({ adapter: new Adapter() });
 describe("user input", () => {
     it('should clear the form when the user presses submit', () => {
         const input = mount(<App/>);
-        const userInputs = input.find('input');
         const submitButton = input.find('button#blah');
-        
-        userInputs.forEach((name) => {name.simulate('change', {target: {value: 'foo'}})});
-        const a = input.instance()
+        const userInputs = input.find('input');
 
-        expect(a.state.name1).toEqual('foo');
+        const cardHolderName = userInputs.find('#cardHolderName');
+        cardHolderName.simulate('change', {target: {value: 'Jonathan Dough'}});
+
+        const ssn = userInputs.find('#ssn');
+        ssn.simulate('change', {target: {value: '123456789'}});
+        
+        //userInputs.forEach((name) => {name.simulate('change', {target: {value: 'foo'}})});
+        const instanceData = input.instance()
+
+        // expect(instanceData.state.name1).toEqual('foo');
+        expect(instanceData.state.cardHolderName).toEqual('Jonathan Dough');
+        expect(instanceData.state.ssn).toEqual('123456789');
         submitButton.simulate('click');
 
-        expect(a.state.name1).toBeNull();
+        expect(instanceData.state.name1).toBeNull();
         
     });
 });

@@ -11,7 +11,6 @@ class App extends Component {
       ssn: "",
       merchantName: ""
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
@@ -30,6 +29,10 @@ class App extends Component {
     this.setState({cardHolderName: cardholderName});
   }
 
+  setSsn = (ssn) => {
+    this.setState({ssn: ssn});
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,12 +40,12 @@ class App extends Component {
           <form>
             <label>
               Cardholder Name:
-              <input onChange={event => this.setCardHolderName(event.target.value)} type="text"/>
+              <input onChange={event => this.setCardHolderName(event.target.value)} type="text" id="cardHolderName"/>
             </label>
             <br></br>
             <label>
               SSN:
-              <input onChange={event => this.setName(event.target.value)} type="text"/>
+              <input onChange={event => this.setSsn(event.target.value)} type="text" id="ssn"/>
             <br></br>
             </label>
             <label>
@@ -50,7 +53,7 @@ class App extends Component {
               <input onChange={event => this.setName(event.target.value)} type="text"/>
             </label>
             <br></br>
-            <button onClick={this.handleSubmit} type="submit" id="blah"/>
+            <button onClick={() => this.handleSubmit()} type="submit" id="blah"/>
           </form>
         </header>
       </div>
