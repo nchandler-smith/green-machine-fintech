@@ -3,16 +3,44 @@ import './App.css';
 import LabelledInput from './LabelledInput.js';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.handleSubmit=this.handleSubmit.bind(this);
+    this.input = React.createRef();
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    event.target.form.reset();
+  }
+
+  setName() {
+
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <form>
-            <LabelledInput labelName="Cardholder Name" value="bob2"/>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Cardholder Name:
+              <input onChange={event => this.setName(event.target.value)} type="text"/>
+            </label>
+            {/*<LabelledInput labelName="Cardholder Name"/>*/}
             <br></br>
-            <LabelledInput labelName="SSN"/>
+            <label>
+              SSN:
+              <input onChange={event => this.setName(event.target.value)} type="text"/>
+            </label>
+            {/*<LabelledInput labelName="SSN"/>*/}
+            <label>
+              Merchant Name:
+              <input onChange={event => this.setName(event.target.value)} type="text"/>
+            </label>
             <br></br>
-            <LabelledInput labelName="Merchant Name"/>
+            {/*<LabelledInput labelName="Merchant Name"/>*/}
+            <input id="blah" type="submit" value="Submit"/>
           </form>
         </header>
       </div>
