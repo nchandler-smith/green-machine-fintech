@@ -7,10 +7,10 @@ let defaultState = {
 const reducers = (state = defaultState, action) => {
     switch (action.type) {
         case 'UPDATE-CARD-HOLDER-NAME':
-            return {
-                ...state,
-                cardHolderName: action.payload
-            }
+        return {
+            ...state,
+            cardHolderName: action.payload
+        }
         case 'UPDATE-SSN':
             return {
                 ...state,

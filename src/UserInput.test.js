@@ -24,6 +24,7 @@ describe("user input", () => {
         merchantName.simulate('change', {target: {value: 'Natorade'}});
         
         const instanceData = input.instance()
+        console.log(instanceData.state)
 
         expect(instanceData.state.cardHolderName).toEqual('Jonathan Dough');
         expect(instanceData.state.ssn).toEqual('123456789');
