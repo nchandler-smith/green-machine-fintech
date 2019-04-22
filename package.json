@@ -112,8 +112,8 @@
       "node"
     ],
     "watchPlugins": [
-      "/Users/nchandler-smith/katas/gm-cc/fintech-create-card-app/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/nchandler-smith/katas/gm-cc/fintech-create-card-app/node_modules/jest-watch-typeahead/testname.js"
+      "/Users/nchandler-smith/katas/gm-cc/fintech-active/node_modules/jest-watch-typeahead/filename.js",
+      "/Users/nchandler-smith/katas/gm-cc/fintech-active/node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {
