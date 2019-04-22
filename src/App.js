@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { setCardHolderName, setSsn, setMerchantname } from './actions/actions.js';
 
 class App extends Component {
   constructor(props){
@@ -25,17 +29,17 @@ class App extends Component {
     this.setState({name1: a})
   }
 
-  setCardHolderName = (cardholderName) => {
-    this.setState({cardHolderName: cardholderName});
-  }
+  // setCardHolderName = (cardholderName) => {
+  //   this.setState({cardHolderName: cardholderName});
+  // }
 
-  setSsn = (ssn) => {
-    this.setState({ssn: ssn});
-  }
+  // setSsn = (ssn) => {
+  //   this.setState({ssn: ssn});
+  // }
 
-  setMerchantname = (merchantName) => {
-    this.setState({merchantName: merchantName});
-  }
+  // setMerchantname = (merchantName) => {
+  //   this.setState({merchantName: merchantName});
+  // }
 
   render() {
     return (
@@ -44,17 +48,17 @@ class App extends Component {
           <form>
             <label>
               Cardholder Name:
-              <input onChange={event => this.setCardHolderName(event.target.value)} type="text" id="cardHolderName"/>
+              <input onChange={event => this.props.setCardHolderName(event.target.value)} type="text" id="cardHolderName"/>
             </label>
             <br></br>
             <label>
               SSN:
-              <input onChange={event => this.setSsn(event.target.value)} type="text" id="ssn"/>
+              <input onChange={event => this.props.setSsn(event.target.value)} type="text" id="ssn"/>
             <br></br>
             </label>
             <label>
               Merchant Name:
-              <input onChange={event => this.setMerchantname(event.target.value)} type="text" id="merchantName"/>
+              <input onChange={event => this.props.setMerchantname(event.target.value)} type="text" id="merchantName"/>
             </label>
             <br></br>
             <button onClick={() => this.handleSubmit()} type="submit" id="submitButton">Submit</button>
@@ -65,4 +69,16 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    cardHolderName: state.cardHolderName,
+    ssn: state.ssn,
+    merchantName: state.merchantName
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ setCardHolderName, setSsn, setMerchantname }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
