@@ -3,12 +3,14 @@ import { mount } from 'enzyme';
 import App from './App'
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { Provider } from 'react-redux';
+import { store } from './store/index'
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("user input", () => {
     it('should clear the form when the user presses submit', () => {
-        const input = mount(<App/>);
+        const input = mount(<Provider store={store}><App/></Provider>);
         const userInputs = input.find('input');
         const submitButton = input.find('#submitButton');
 

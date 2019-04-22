@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 
 import { setCardHolderName, setSsn, setMerchantname } from './actions/actions.js';
+import { store } from './store/index.js'
 
 class App extends Component {
   constructor(props){
@@ -43,6 +44,7 @@ class App extends Component {
 
   render() {
     return (
+      <Provider store={store}>
       <div className="App">
         <header className="App-header">
           <form>
@@ -65,6 +67,7 @@ class App extends Component {
           </form>
         </header>
       </div>
+      </Provider>
     );
   }
 }
