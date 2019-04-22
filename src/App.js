@@ -57,7 +57,7 @@ class App extends Component {
               <input onChange={event => this.setMerchantname(event.target.value)} type="text" id="merchantName"/>
             </label>
             <br></br>
-            <button onClick={() => this.handleSubmit()} type="submit" id="blah"/>
+            <button onClick={() => this.handleSubmit()} type="submit" id="submitButton">Submit</button>
           </form>
         </header>
       </div>

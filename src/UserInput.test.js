@@ -9,8 +9,8 @@ Enzyme.configure({ adapter: new Adapter() });
 describe("user input", () => {
     it('should clear the form when the user presses submit', () => {
         const input = mount(<App/>);
-        const submitButton = input.find('button#blah');
         const userInputs = input.find('input');
+        const submitButton = input.find('#submitButton');
 
         const cardHolderName = userInputs.find('#cardHolderName');
         cardHolderName.simulate('change', {target: {value: 'Jonathan Dough'}});
